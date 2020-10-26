@@ -1,6 +1,7 @@
 pipeline{
 
-  agent { docker { image 'python:3.7.2' } }
+  agent { 
+    docker { image 'python:3.7.2' } }
   
     stages{
        stage("new") {
@@ -11,7 +12,7 @@ pipeline{
       stage("build") {
         steps{
           echo 'building the application'
-           sh 'pip install -r requirements.txt'
+      
         }
       }
       stage("test") {
