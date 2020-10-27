@@ -9,7 +9,13 @@ pipeline {
         stage('build script') {
             steps {
             sh 'python main.py'
-    }
-}
+            }
+        }
+          stage('install requirements') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+     
+        }
     }
 }
